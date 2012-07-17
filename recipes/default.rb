@@ -3,8 +3,6 @@
 # Recipe:: default
 #
 
-#include_recipe "ark"
-
 OSMOSIS_HOME = "#{node[:osmosis][:path]}/osmosis"
 
 # Install Osmosis
