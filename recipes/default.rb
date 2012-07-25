@@ -37,7 +37,8 @@ end
 
 # Put all plugin jars in the $OSMOSIS_HOME/lib/default/ directory
 for plugin in node[:osmosis][:plugins]
-  remote_file "#{OSMOSIS_HOME}/lib/default/#{plugin["jar_name"]}" do
+  jar_name = File.basename("#{plugin["jar_url"]}")
+  remote_file "#{OSMOSIS_HOME}/lib/default/#{jar_name}" do
     source "#{plugin["jar_url"]}"
     owner "root"
     group "root"
