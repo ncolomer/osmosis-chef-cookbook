@@ -1,6 +1,6 @@
 
-set[:osmosis][:version] = "0.40.1"
-set[:osmosis][:checksum] = "3f4e29184341fbe8996f6dcd70d5c8104cab2a3c643ae4ca6d5389fc232a2d00"
+set[:osmosis][:version] = "0.41"
+set[:osmosis][:checksum] = "e88a382883a4c1252243e4e96b7fa274e2c2564572ba22c23a3506f81fee244c"
 
 set[:osmosis][:path] = "/opt"
 set[:osmosis][:java_opts] = "-server -Xmx512m"
