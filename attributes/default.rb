@@ -1,8 +1,8 @@
 
 # === VERSION ===
 #
-default.osmosis[:version] = "0.41"
-default.osmosis[:checksum] = "e88a382883a4c1252243e4e96b7fa274e2c2564572ba22c23a3506f81fee244c"
+default.osmosis[:version] = "0.42"
+default.osmosis[:checksum] = "725ee5cfdacfd64f79435f6a860c3af7b7fdecd654570fa2f317c25e7126c1bf"
 
 # === PATH ===
 #
