@@ -16,7 +16,7 @@ Please note that as a Java application, Osmosis requires a working JRE on the ta
 
 ## Requirements
 
-This cookboock requires the [`ark`](http://github.com/bryanwb/chef-ark) provider to run as expected.
+This cookboock requires the [`ark`](https://github.com/opscode-cookbooks/ark) provider to run as expected.
 
 ## Attributes
 
@@ -26,7 +26,7 @@ See attributes/default.rb for default values.
 * node["osmosis"]["checksum"] - The sha256 checksum of the build file to download. You should compute it using something like <code>shasum -a 256</code>.
 * node["osmosis"]["path"] - The Osmosis installation path.
 * node["osmosis"]["java_opts"] - The Osmosis Java options. See the dedicated [tuning page](http://wiki.openstreetmap.org/wiki/Osmosis/Tuning).
-* node["osmosis"]["plugins"] - An array of JSON object containing both <code>jar_url</code> and <code>class_name</code> keys.
+* node["osmosis"]["plugins"] - An array of JSON object containing <code>jar_url</code>, <code>jar_checksum</code> and <code>plugin_loader</code> keys.
 
 ## Usage
 
@@ -44,8 +44,9 @@ override_attributes(
   :osmosis => {
     :plugins => [
       {
-        :jar_url => "https://github.com/downloads/ncolomer/elasticsearch-osmosis-plugin/elasticsearch-osmosis-plugin-1.0.2.jar",
-        :class_name => "org.openstreetmap.osmosis.plugin.elasticsearch.ElasticSearchWriterPluginLoader"
+        :jar_url => "https://github.com/downloads/ncolomer/elasticsearch-osmosis-plugin/elasticsearch-osmosis-plugin-1.2.0.jar",
+        :jar_checksum => "59bf1d755846a10bc5bcf4230ace5d589e410da28fb142d0566e232ad7d18e25"
+        :plugin_loader => "org.openstreetmap.osmosis.plugin.elasticsearch.ElasticSearchWriterPluginLoader"
       }
     ]
   }
