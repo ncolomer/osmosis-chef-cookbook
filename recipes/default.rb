@@ -34,7 +34,7 @@ file "#{OSMOSIS_HOME}/config/osmosis-plugins.conf" do
   group "root"
   mode 0755
   action :create
-  content node.osmosis[:plugins].collect{|plugin| "#{plugin["class_name"]}"}.join("\n")
+  content node.osmosis[:plugins].collect{|plugin| "#{plugin["plugin_loader"]}"}.join("\n")
 end
 
 # Put all plugin jars in the $OSMOSIS_HOME/lib/default directory
@@ -42,6 +42,7 @@ for plugin in node.osmosis[:plugins]
   jar_name = File.basename("#{plugin["jar_url"]}")
   remote_file "#{OSMOSIS_HOME}/lib/default/#{jar_name}" do
     source "#{plugin["jar_url"]}"
+    checksum "#{plugin["jar_checksum"]}"
     owner "root"
     group "root"
     mode 0755
