@@ -9,7 +9,7 @@ OSMOSIS_HOME = "#{node.osmosis[:path]}/osmosis"
 
 # Install Osmosis
 ark "osmosis" do
-  url "http://dev.openstreetmap.org/~bretth/osmosis-build/osmosis-#{node.osmosis[:version]}.tgz"
+  url "http://dev.openstreetmap.org/~bretth/osmosis-build/osmosis-#{node.osmosis[:version]}.zip"
   checksum "#{node.osmosis[:checksum]}"
   version "#{node.osmosis[:version]}"
   append_env_path true
